@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f9fc;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+header {
+    background: linear-gradient(135deg, #0077be 0%, #00a8e8 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #ff7e5f;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ============================================
+   NAVIGASI (Flexbox)
+   ============================================ */
+nav {
+    background-color: #005a8d;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Pseudo-class :hover */
+nav ul li a:hover {
+    background-color: #ff7e5f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #0077be;
+}
+
+section h2 {
+    color: #0077be;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f4e4bc;
+    font-size: 1.8rem;
+}
+
+section h3 {
+    color: #ff7e5f;
+    margin: 20px 0 10px 0;
+    font-size: 1.3rem;
+}
+
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* ============================================
+   LIST STYLING
+   ============================================ */
+ul, ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+ul li, ol li {
+    margin-bottom: 8px;
+}
+
+dl dt {
+    font-weight: bold;
+    color: #0077be;
+    margin-top: 10px;
+}
+
+dl dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* ============================================
+   GALERI (Grid Layout)
+   ============================================ */
+.galeri-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.galeri-container figure {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galeri-container figure:hover {
+    transform: scale(1.03);
+}
+
+.galeri-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.galeri-container figcaption {
+    padding: 12px;
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    background-color: #f4e4bc;
+}
+
+/* ============================================
+   TABEL
+   ============================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+caption {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #0077be;
+    text-align: left;
+}
+
+thead {
+    background-color: #0077be;
+    color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f4e4bc;
+}
+
+tfoot {
+    background-color: #f4e4bc;
+    font-style: italic;
+}
+
+/* ============================================
+   FORMULIR
+   ============================================ */
+form {
+    background-color: #f9fbfd;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+fieldset {
+    border: 2px solid #0077be;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+legend {
+    background-color: #0077be;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0077be;
+    box-shadow: 0 0 5px rgba(0, 119, 190, 0.3);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #0077be;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff7e5f;
+}
+
+input[type="reset"] {
+    background-color: #888;
+}
+
+input[type="reset"]:hover {
+    background-color: #555;
+}
+
+/* ============================================
+   MULTIMEDIA
+   ============================================ */
+iframe {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    margin: 15px 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background-color: #005a8d;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #f4e4bc;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff7e5f;
+    text-decoration: underline;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #f4e4bc;
+    margin-bottom: 20px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (Media Query)
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 80%;
+        text-align: center;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+    }
+
+    .galeri-container {
+        grid-template-columns: 1fr;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

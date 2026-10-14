@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papan Tugas Tim</title>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-100 text-slate-800">
+    <div class="mx-auto max-w-5xl p-4 md:p-8">
+      <div class="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
+        <!-- ===== Kolom kiri: daftar anggota ===== -->
+        <aside class="rounded-2xl bg-white p-4 shadow-sm md:w-64 md:shrink-0">
+          <h1 class="text-lg font-bold">Tim Marsha</h1>
+          <p class="mb-3 text-xs font-medium uppercase tracking-wider text-slate-400">
+            Anggota
+          </p>
+          <!-- Teks "Memuat anggota..." atau pesan error muncul di sini -->
+          <div id="status-anggota" class="text-sm text-slate-500"></div>
+          <!-- Tombol anggota dibuat oleh script.js -->
+          <div id="daftar-anggota" class="flex gap-1 overflow-x-auto md:flex-col"></div>
+        </aside>
+
+        <!-- ===== Kolom kanan: tugas anggota ===== -->
+        <main class="min-w-0 flex-1 rounded-2xl bg-white p-5 shadow-sm">
+          <div class="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 id="judul-tugas" class="text-2xl font-bold">Pilih anggota tim</h2>
+              <p id="ringkasan" class="text-sm text-slate-500">0 dari 0 tugas selesai</p>
+            </div>
+            <div class="h-2 w-full rounded-full bg-slate-100 md:w-48">
+              <div id="bar-progres" class="h-2 rounded-full bg-emerald-500 transition-all" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- Pencarian dan form tambah tugas -->
+          <div class="flex flex-col gap-3 md:flex-row">
+            <input
+              id="input-cari"
+              type="text"
+              placeholder="Cari judul tugas"
+              class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none focus:border-indigo-400 md:w-48"
+            />
+            <form id="form-tugas" class="flex flex-1 gap-2" novalidate>
+              <input
+                id="input-judul"
+                type="text"
+                placeholder="Tambah tugas baru, minimal 5 karakter"
+                class="min-w-0 flex-1 rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-indigo-400"
+              />
+              <button
+                id="tombol-simpan"
+                type="submit"
+                class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                Simpan
+              </button>
+            </form>
+          </div>
+          <p id="pesan-error-form" class="mt-1 min-h-[1.25rem] text-xs text-red-600 md:ml-[13.75rem]"></p>
+
+          <!-- Status memuat / error tugas -->
+          <div id="status-tugas" class="py-6 text-sm text-slate-500 empty:hidden"></div>
+
+          <!-- Daftar tugas dibuat oleh script.js -->
+          <ul id="daftar-tugas"></ul>
+          <p id="pesan-kosong" class="hidden py-6 text-center text-sm text-slate-400"></p>
+        </main>
+      </div>
+    </div>
+
+    <!-- Notifikasi (hilang otomatis setelah 3 detik) -->
+    <div
+      id="notifikasi"
+      class="fixed bottom-4 right-4 hidden rounded-lg bg-emerald-600 px-4 py-3 text-sm font-medium text-white shadow-lg"
+    ></div>
+
+    <!-- Script diletakkan di akhir body agar semua elemen di atas sudah ada -->
+    <script src="script.js"></script>
+  </body>
+</html>
